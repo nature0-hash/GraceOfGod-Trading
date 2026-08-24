@@ -13,7 +13,7 @@ import {
 } from "./brand-cards";
 
 /**
- * Hero — unique layout vs. the Jiro reference.
+ * Hero: unique layout vs. the Jiro reference.
  *
  * Layout:
  *  - Centered eyebrow + headline + subhead + CTAs at the top.
@@ -90,7 +90,7 @@ export function Hero() {
 
           <p className="mt-6 text-base sm:text-lg lg:text-xl text-[#5a4068] max-w-2xl mx-auto leading-relaxed">
             GRACEOFGOD TRADING AND LOGISTICS LIMITED converts your unused gift
-            cards into cash — fast, secure, and at the best market rates.
+            cards into cash: fast, secure, and at the best market rates.
             Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, Visa and
             100+ more brands, paid out within minutes.
           </p>
@@ -199,7 +199,7 @@ function Stat({ value, label }: { value: string; label: string }) {
 }
 
 /* ============================================================================
- * OrbitSystem — the rotating gift-card constellation.
+ * OrbitSystem: the rotating gift-card constellation.
  * ========================================================================== */
 function OrbitSystem({
   orbitCards,

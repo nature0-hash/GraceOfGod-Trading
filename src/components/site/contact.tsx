@@ -7,7 +7,7 @@ import { siteConfig, whatsappLink } from "@/lib/site-config";
 import { WhatsAppButton } from "./whatsapp-button";
 
 /**
- * Contact — different layout from Jiro.
+ * Contact: different layout from Jiro.
  *
  * IMPORTANT: The WhatsApp *number* is intentionally NOT displayed here.
  * It is only displayed in the Footer. Here we show a WhatsApp button + a
@@ -42,7 +42,7 @@ export function Contact() {
             </h2>
             <p className="mt-4 text-base md:text-lg text-white/80">
               Send us a message on WhatsApp and get an instant rate quote. Most
-              trades complete within minutes — no long waits, no complex
+              trades complete within minutes: no long waits, no complex
               sign-ups, no hidden fees.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -81,7 +81,7 @@ export function Contact() {
         </motion.div>
 
         <div className="grid sm:grid-cols-3 gap-5">
-          {/* WhatsApp — NO phone number shown, just button + description */}
+          {/* WhatsApp: NO phone number shown, just button + description */}
           <ContactCard
             icon={MessageCircle}
             title="WhatsApp"
@@ -122,7 +122,7 @@ export function Contact() {
             </h3>
             <p className="text-sm text-[#5a4068]">
               Fill this in and we&apos;ll open a pre-filled WhatsApp chat with
-              our team. No phone number needed — just hit send.
+              our team. No phone number needed, just hit send.
             </p>
           </div>
           <QuickForm />
@@ -138,7 +138,7 @@ export function Contact() {
         >
           <MapPin className="h-4 w-4 text-[#f59e0b]" />
           <span>
-            GRACEOFGOD TRADING AND LOGISTICS LIMITED — serving clients
+            GRACEOFGOD TRADING AND LOGISTICS LIMITED, serving clients
             across Africa, Europe, North America, Asia and beyond.
           </span>
         </motion.div>

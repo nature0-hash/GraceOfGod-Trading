@@ -24,19 +24,19 @@ const values = [
     icon: Award,
     title: "Excellence",
     description:
-      "We hold ourselves to a high bar on every trade: fast verification, accurate rates, and reliable payouts. If something goes wrong, we make it right — no excuses.",
+      "We hold ourselves to a high bar on every trade: fast verification, accurate rates, and reliable payouts. If something goes wrong, we make it right. No excuses.",
   },
   {
     icon: Heart,
     title: "Customer First",
     description:
-      "Real humans answer your WhatsApp within minutes. We treat every client — big or small, first-time or long-time — with the same respect and attention.",
+      "Real humans answer your WhatsApp within minutes. We treat every client, big or small, first-time or long-time, with the same respect and attention.",
   },
   {
     icon: Globe2,
     title: "Global Reach",
     description:
-      "We trade across continents and time zones. Wherever you are in the world, we have a payout option that works for you — bank, mobile money, or local app.",
+      "We trade across continents and time zones. Wherever you are in the world, we have a payout option that works for you: bank, mobile money, or local app.",
   },
 ];
 
@@ -48,7 +48,7 @@ const stats = [
 ];
 
 /**
- * About — different layout from Jiro.
+ * About: different layout from Jiro.
  * Alternating row layout: text/visual on each side, with mission & vision
  * stacked horizontally (not vertically) and stats as a horizontal band.
  */
@@ -77,20 +77,20 @@ export function About() {
               GRACEOFGOD TRADING AND LOGISTICS LIMITED is a global gift card
               trading company built on trust, speed, and fairness. We help
               individuals and businesses convert unused gift cards into real
-              cash — quickly, securely, and at the best possible rates.
+              cash: quickly, securely, and at the best possible rates.
             </p>
             <p className="mt-4 text-base text-[#5a4068] leading-relaxed">
               What started as a small WhatsApp-based operation has grown into a
               trusted partner for thousands of traders across more than 40
-              countries. We trade every major gift card brand — from Amazon
+              countries. We trade every major gift card brand, from Amazon
               and Steam to iTunes, Google Play, Xbox, PlayStation, Visa,
-              Mastercard and many more — and pay out through bank transfer,
+              Mastercard and many more, and pay out through bank transfer,
               mobile money, and local payment channels.
             </p>
             <p className="mt-4 text-base text-[#5a4068] leading-relaxed">
               Our mission is simple: make gift card trading fast, transparent,
               and accessible to everyone, everywhere. When you trade with us,
-              you get upfront rates, real-time updates, and guaranteed payouts —
+              you get upfront rates, real-time updates, and guaranteed payouts
               every single time.
             </p>
 
@@ -122,7 +122,7 @@ export function About() {
                   Our Mission
                 </h3>
                 <p className="text-sm text-[#5a4068] leading-relaxed">
-                  To make gift card trading simple, fast, and fair for everyone —
+                  To make gift card trading simple, fast, and fair for everyone,
                   delivering instant payouts and the most competitive rates,
                   every single time.
                 </p>
@@ -136,7 +136,7 @@ export function About() {
                   Our Vision
                 </h3>
                 <p className="text-sm text-[#5a4068] leading-relaxed">
-                  To be the most trusted gift card trading partner worldwide —
+                  To be the most trusted gift card trading partner worldwide,
                   known for integrity, speed, and the human touch that makes
                   every client feel valued.
                 </p>

@@ -26,7 +26,7 @@ const tradeSteps = [
     step: "03",
     title: "We verify the balance",
     description:
-      "Our team validates the card balance within minutes. You receive an upfront quote with no hidden deductions — the rate we quote is the rate you get paid.",
+      "Our team validates the card balance within minutes. You receive an upfront quote with no hidden deductions. The rate we quote is the rate you get paid.",
     accent: "from-[#f59e0b] to-[#fbbf24]",
   },
   {
@@ -34,13 +34,13 @@ const tradeSteps = [
     step: "04",
     title: "Get paid instantly",
     description:
-      "Choose your preferred payout — bank transfer, mobile money, or local payment app — and receive your funds. Most payouts complete within 5 to 15 minutes.",
+      "Choose your preferred payout: bank transfer, mobile money, or local payment app, and receive your funds. Most payouts complete within 5 to 15 minutes.",
     accent: "from-[#fb7185] to-[#f43f5e]",
   },
 ];
 
 /**
- * HowItWorks — different layout from Jiro.
+ * HowItWorks: different layout from Jiro.
  * Vertical timeline on mobile, horizontal flowing cards on desktop.
  */
 export function HowItWorks() {

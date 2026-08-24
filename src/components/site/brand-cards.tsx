@@ -9,7 +9,7 @@
  *  - "GIFT CARD" header
  *  - Brand name
  *  - Chip element
- *  - "GraceOfGod Trading" footer (NEW — replaces "Jiro's Trading")
+ *  - "GraceOfGod Trading" footer (NEW, replaces "Jiro's Trading")
  *
  * Three variants:
  *  - "large": big card used in gallery grid (h-52)
@@ -1042,7 +1042,7 @@ export function NordstromCard({ variant = "large", className = "" }: BrandCardPr
 }
 
 /* ============================================================================
- * MiniShell — shared compact card used by all brand cards in the hero orbit.
+ * MiniShell: shared compact card used by all brand cards in the hero orbit.
  * Keeps the visual identity consistent across all orbiting cards.
  * ========================================================================== */
 function MiniShell({

@@ -53,7 +53,7 @@ const brandCardMap: Record<
 };
 
 /**
- * Gallery — different layout from Jiro.
+ * Gallery: different layout from Jiro.
  * Features a "spotlight" arrangement: one big featured card + 5 supporting
  * cards in a tighter grid, followed by an asymmetric marquee strip.
  */
@@ -80,12 +80,12 @@ export function Gallery() {
           </h2>
           <p className="mt-4 text-base md:text-lg text-[#5a4068]">
             We accept every major gift card brand from the US, UK, EU, Canada,
-            Australia and beyond. Don&apos;t see your card listed? Reach out —
-            we likely still trade it.
+            Australia and beyond. Don&apos;t see your card listed? Reach out.
+            We likely still trade it.
           </p>
         </motion.div>
 
-        {/* Spotlight featured card layout — 1 large + 5 medium */}
+        {/* Spotlight featured card layout: 1 large + 5 medium */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export function Gallery() {
           transition={{ duration: 0.6 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-12"
         >
-          {/* Featured large card (Amazon) — spans 2 cols / 2 rows */}
+          {/* Featured large card (Amazon): spans 2 cols / 2 rows */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -184,7 +184,7 @@ export function Gallery() {
         {/* CTA */}
         <div className="mt-14 text-center">
           <p className="text-[#5a4068] mb-5">
-            Ready to trade? Get an instant rate quote on WhatsApp — most
+            Ready to trade? Get an instant rate quote on WhatsApp. Most
             replies arrive within 2 minutes.
           </p>
           <WhatsAppButton
@@ -200,7 +200,7 @@ export function Gallery() {
 }
 
 /**
- * FeaturedCard — a custom large display card highlighting Amazon as the
+ * FeaturedCard: a custom large display card highlighting Amazon as the
  * flagship brand. Combines the brand card with marketing copy in a single
  * tall visual.
  */
@@ -229,7 +229,7 @@ function FeaturedCard() {
           </div>
           <p className="text-sm md:text-base text-[#232F3E]/80 max-w-sm leading-relaxed">
             The world&apos;s most-traded gift card. We accept Amazon US, UK,
-            EU, Canada and more — with some of the best rates in the industry
+            EU, Canada and more, with some of the best rates in the industry
             and instant verification on WhatsApp.
           </p>
         </div>

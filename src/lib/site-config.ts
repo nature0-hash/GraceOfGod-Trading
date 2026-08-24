@@ -41,7 +41,7 @@ export const siteConfig = {
   brandShort: "GraceOfGod Trading",
   /** Tiny eyebrow used in navbar / hero */
   brandEyebrow: "Sunrise Trading",
-  tagline: "Sunrise Gift Card Trading — Fast, Fair, Global",
+  tagline: "Sunrise Gift Card Trading: Fast, Fair, Global",
   description:
     "GRACEOFGOD TRADING AND LOGISTICS LIMITED is a global gift card trading partner offering secure transactions, instant verification, and the best market rates for gift cards worldwide.",
 
@@ -66,7 +66,7 @@ export const siteConfig = {
 
 /**
  * Build a WhatsApp deep-link. Number is hidden from the visible UI everywhere
- * except the footer — but the link itself still works correctly.
+ * except the footer, but the link itself still works correctly.
  */
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${siteConfig.whatsappNumber}`;
@@ -93,7 +93,7 @@ export const trustBadges = [
     icon: "zap",
     title: "Instant Verification",
     description:
-      "Submit your card and our team verifies the balance within minutes. No long waits, no endless back-and-forth — just fast confirmation.",
+      "Submit your card and our team verifies the balance within minutes. No long waits, no endless back-and-forth. Just fast confirmation.",
   },
   {
     icon: "globe",
@@ -105,7 +105,7 @@ export const trustBadges = [
     icon: "layers",
     title: "All Card Types",
     description:
-      "Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, Sephora, Visa, Mastercard and many more — we accept them all, every single day.",
+      "Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, Sephora, Visa, Mastercard and many more. We accept them all, every single day.",
   },
 ] as const;
 
@@ -142,15 +142,15 @@ export const stats = [
 export const faqs = [
   {
     q: "How long does it take to get paid after I submit my gift card?",
-    a: "Most trades are completed within 5 to 15 minutes of submitting your card. Once we verify the balance, we immediately arrange your payout through your preferred method — bank transfer, mobile money, or another local payment option. Complex or high-value trades may take slightly longer, but you will always know the status in real time through WhatsApp.",
+    a: "Most trades are completed within 5 to 15 minutes of submitting your card. Once we verify the balance, we immediately arrange your payout through your preferred method: bank transfer, mobile money, or another local payment option. Complex or high-value trades may take slightly longer, but you will always know the status in real time through WhatsApp.",
   },
   {
     q: "Which gift card brands do you accept?",
-    a: "We trade every major gift card brand including Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, eBay, Sephora, Netflix, Spotify, Visa, Mastercard, Walmart, Target, Best Buy, Apple Store, Nike, Adidas, Macy's, Nordstrom and many more. If you don't see your card listed, message us on WhatsApp — we likely still trade it.",
+    a: "We trade every major gift card brand including Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, eBay, Sephora, Netflix, Spotify, Visa, Mastercard, Walmart, Target, Best Buy, Apple Store, Nike, Adidas, Macy's, Nordstrom and many more. If you don't see your card listed, message us on WhatsApp. We likely still trade it.",
   },
   {
     q: "How do you determine the rate for my gift card?",
-    a: "Our rates are benchmarked daily against live market data so you always receive a fair, competitive payout. The exact rate depends on the card brand, the card value, the country of origin, and current market demand. Once we confirm your card details on WhatsApp, we send you an upfront quote — no hidden deductions, no last-minute changes.",
+    a: "Our rates are benchmarked daily against live market data so you always receive a fair, competitive payout. The exact rate depends on the card brand, the card value, the country of origin, and current market demand. Once we confirm your card details on WhatsApp, we send you an upfront quote with no hidden deductions and no last-minute changes.",
   },
   {
     q: "What payment methods do you support for payouts?",

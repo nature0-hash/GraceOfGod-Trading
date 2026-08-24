@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { whatsappLink } from "@/lib/site-config";
 
 /**
- * Floating WhatsApp button — stays visible while scrolling.
+ * Floating WhatsApp button: stays visible while scrolling.
  *
  * NOTE: This does NOT display the phone number. It only opens WhatsApp
  * via wa.me link. The actual number is only displayed in the footer.

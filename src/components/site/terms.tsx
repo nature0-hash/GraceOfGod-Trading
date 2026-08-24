@@ -37,7 +37,7 @@ const coreTerms = [
 ];
 
 /**
- * Terms — different layout from Jiro.
+ * Terms: different layout from Jiro.
  * Two-column compact card grid + a wider fraud-prevention banner.
  */
 export function Terms() {

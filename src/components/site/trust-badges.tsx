@@ -18,7 +18,7 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 /**
- * TrustBadges — different layout from Jiro.
+ * TrustBadges: different layout from Jiro.
  * Asymmetric staggered 4-card row with connecting line and large numeric labels.
  */
 export function TrustBadges() {
@@ -41,7 +41,7 @@ export function TrustBadges() {
             Built on trust, speed, and fairness
           </h2>
           <p className="mt-4 text-base md:text-lg text-[#5a4068]">
-            Every trade is handled with the same care — whether it&apos;s your
+            Every trade is handled with the same care, whether it&apos;s your
             first $25 card or your thousandth bulk order. Here&apos;s what
             every client gets when they trade with GraceOfGod.
           </p>

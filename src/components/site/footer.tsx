@@ -4,7 +4,7 @@ import { Mail, MessageCircle, Clock, ArrowUp, Globe2, Sparkles } from "lucide-re
 import { navLinks, siteConfig, whatsappLink } from "@/lib/site-config";
 
 /**
- * Footer — unique layout vs. Jiro.
+ * Footer: unique layout vs. Jiro.
  *
  * IMPORTANT: This is the ONLY place on the entire website where the actual
  * WhatsApp phone number is visibly displayed. Everywhere else, WhatsApp
@@ -45,7 +45,7 @@ export function Footer() {
             </div>
             <p className="text-sm text-white/70 leading-relaxed mb-5 max-w-xs">
               Your trusted global gift card partner. Secure, instant, and
-              reliable gift card trading worldwide — sunrise-fast, every time.
+              reliable gift card trading worldwide, sunrise-fast, every time.
             </p>
             <a
               href={whatsappLink("Hello GraceOfGod Trading, I'd like to trade a gift card.")}
@@ -102,7 +102,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Us — the ONLY place where the WhatsApp number is visible */}
+          {/* Contact Us: the ONLY place where the WhatsApp number is visible */}
           <div className="lg:col-span-3">
             <h4 className="text-sm font-bold uppercase tracking-wider text-[#f59e0b] mb-4">
               Contact Us

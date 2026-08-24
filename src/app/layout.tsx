@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "GraceOfGod Trading and Logistics Limited",
     description:
-      "Sunrise Gift Card Trading — secure, instant, and reliable gift card trading worldwide. Get the best rates for Amazon, Steam, iTunes, Google Play, Xbox, PlayStation and more.",
+      "Sunrise Gift Card Trading: secure, instant, and reliable gift card trading worldwide. Get the best rates for Amazon, Steam, iTunes, Google Play, Xbox, PlayStation and more.",
     siteName: "GraceOfGod Trading and Logistics Limited",
     type: "website",
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GraceOfGod Trading and Logistics Limited",
     description:
-      "Sunrise Gift Card Trading — secure, instant, and reliable gift card trading worldwide.",
+      "Sunrise Gift Card Trading: secure, instant, and reliable gift card trading worldwide.",
   },
 };
 

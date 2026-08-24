@@ -9,7 +9,7 @@ const features = [
     icon: Clock,
     title: "Instant Verification",
     description:
-      "Submit your gift card and we verify the balance within minutes. No long waits, no back-and-forth — just fast confirmation and a clear quote.",
+      "Submit your gift card and we verify the balance within minutes. No long waits, no back-and-forth. Just fast confirmation and a clear quote.",
   },
   {
     icon: BadgePercent,
@@ -32,7 +32,7 @@ const features = [
 ];
 
 /**
- * Services — different layout from Jiro.
+ * Services: different layout from Jiro.
  * Compact hero-style feature card at top, followed by an alternating
  * split-feature visual that showcases the trading workflow.
  */

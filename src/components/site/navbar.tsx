@@ -27,7 +27,7 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-16 md:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand mark — sunrise medallion + wordmark */}
+        {/* Brand mark: sunrise medallion + wordmark */}
         <a
           href="#home"
           className="flex items-center gap-3 group"
@@ -50,7 +50,7 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Desktop nav — pill */}
+        {/* Desktop nav: pill */}
         <ul className="hidden lg:flex items-center gap-1 bg-white/70 backdrop-blur border border-[#3b0764]/8 rounded-full p-1 shadow-sm">
           {navLinks.map((link) => (
             <li key={link.href}>

@@ -47,7 +47,7 @@
 :root {
   --radius: 0.875rem;
 
-  /* Sunrise Aubergine palette — Deep Plum + Saffron + Coral.
+  /* Sunrise Aubergine palette: Deep Plum + Saffron + Coral.
      Distinct from the Jiro navy+gold palette and entirely free of green
      (green is reserved for a sister site). */
   --background: #FFFBF5;        /* warm cream */
@@ -176,7 +176,7 @@ html {
 }
 
 /* ============================================================================
- * ORBIT ANIMATION — Hero gift cards continuously circle a central point.
+ * ORBIT ANIMATION: Hero gift cards continuously circle a central point.
  *
  * Approach:
  *  - `.orbit-system` is the rotating frame. It rotates 0 → 360deg linearly.
@@ -223,7 +223,7 @@ html {
   to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
-/* Pause on hover (desktop only) — gives users a chance to read a card.
+/* Pause on hover (desktop only): gives users a chance to read a card.
    We don't pause on touch devices to avoid getting stuck. */
 @media (hover: hover) and (pointer: fine) {
   .orbit-system:hover,
@@ -244,7 +244,7 @@ html {
 }
 
 /* ----------------------------------------------------------------------------
- * Responsive orbit radius — the cards must sit nicely on the circle at every
+ * Responsive orbit radius: the cards must sit nicely on the circle at every
  * viewport size. We use a CSS variable consumed by the hero's inline transform.
  * -------------------------------------------------------------------------- */
 .orbit-slot {
@@ -261,7 +261,7 @@ html {
 }
 
 /* ============================================================================
- * Marquee — for the brand-card strip in the gallery section
+ * Marquee: for the brand-card strip in the gallery section
  * ========================================================================== */
 @keyframes marquee {
   0%   { transform: translateX(0); }
@@ -301,7 +301,7 @@ html {
 }
 
 /* ============================================================================
- * Scroll-reveal helper — used with IntersectionObserver in components
+ * Scroll-reveal helper: used with IntersectionObserver in components
  * ========================================================================== */
 .reveal {
   opacity: 0;

@@ -7,7 +7,7 @@ import { faqs } from "@/lib/site-config";
 import { WhatsAppButton } from "./whatsapp-button";
 
 /**
- * FAQ — accordion-style, different layout from Jiro (which didn't have one).
+ * FAQ: accordion-style, different layout from Jiro (which didn't have one).
  */
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
@@ -32,7 +32,7 @@ export function Faq() {
           </h2>
           <p className="mt-4 text-base md:text-lg text-[#5a4068]">
             The most common questions we get from traders. Don&apos;t see yours?
-            Message us on WhatsApp — we love to help.
+            Message us on WhatsApp. We love to help.
           </p>
         </motion.div>
 
