@@ -1,0 +1,322 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
+  --font-mono: var(--font-jakarta);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Sunrise Aubergine palette — Deep Plum + Saffron + Coral.
+     Distinct from the Jiro navy+gold palette and entirely free of green
+     (green is reserved for a sister site). */
+  --background: #FFFBF5;        /* warm cream */
+  --foreground: #1f0a2e;        /* deep plum ink */
+
+  --card: #ffffff;
+  --card-foreground: #1f0a2e;
+
+  --popover: #ffffff;
+  --popover-foreground: #1f0a2e;
+
+  --primary: #3b0764;           /* royal plum */
+  --primary-foreground: #ffffff;
+
+  --secondary: #faf5ff;          /* light lavender */
+  --secondary-foreground: #3b0764;
+
+  --muted: #faf5ff;
+  --muted-foreground: #6b4f7d;   /* muted plum */
+
+  --accent: #f59e0b;             /* saffron amber */
+  --accent-foreground: #1f0a2e;
+
+  --destructive: #dc2626;
+
+  --border: #ece4f5;             /* very light plum tint */
+  --input: #ece4f5;
+  --ring: #f59e0b;
+
+  /* Highlights */
+  --coral: #fb7185;
+  --plum-deep: #1e0a2e;          /* deepest plum for dark sections */
+  --plum-mid: #3b0764;
+  --plum-soft: #5b0e8a;
+  --amber: #f59e0b;
+  --amber-light: #fbbf24;
+  --cream: #FFFBF5;
+  --cream-warm: #FFF7ED;
+
+  --chart-1: #3b0764;
+  --chart-2: #f59e0b;
+  --chart-3: #fb7185;
+  --chart-4: #5b0e8a;
+  --chart-5: #fbbf24;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f0a2e;
+  --sidebar-primary: #3b0764;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #faf5ff;
+  --sidebar-accent-foreground: #3b0764;
+  --sidebar-border: #ece4f5;
+  --sidebar-ring: #f59e0b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-jakarta), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #faf5ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4a1d8;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+/* ============================================================================
+ * Decorative patterns
+ * ========================================================================== */
+
+/* Subtle dotted grid pattern */
+.dotted-pattern {
+  background-image: radial-gradient(rgba(59, 7, 100, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Diagonal warm gradient for hero backdrop */
+.warm-radial {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(245, 158, 11, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(251, 113, 133, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(59, 7, 100, 0.10) 0%, transparent 55%);
+}
+
+/* Saffron gradient text */
+.amber-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #fb7185 60%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Plum gradient text (for use on light backgrounds) */
+.plum-text {
+  background: linear-gradient(135deg, #3b0764 0%, #5b0e8a 50%, #3b0764 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ============================================================================
+ * ORBIT ANIMATION — Hero gift cards continuously circle a central point.
+ *
+ * Approach:
+ *  - `.orbit-system` is the rotating frame. It rotates 0 → 360deg linearly.
+ *  - `.orbit-slot` is statically positioned on the circle (one per card).
+ *    Each slot is placed at its own angle around the center.
+ *  - `.orbit-card-upright` counter-rotates 0 → -360deg so the card stays
+ *    upright while orbiting.
+ *
+ * Both animations share the same duration so they stay perfectly in sync.
+ * ========================================================================== */
+.orbit-system {
+  animation: orbit-rotate 38s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* The .orbit-slot fills its parent (.orbit-system). Its center IS the parent's
+   center, so transform-origin (default center) becomes the orbit center.
+   translateY(-R%) where R is a percentage of the slot's height (which equals
+   the parent's height). This places the slot at distance R from the center. */
+.orbit-slot {
+  transform-origin: center center;
+}
+
+/* .orbit-card-upright is positioned absolutely at the slot's center (top:50%;
+   left:50%) and counter-rotates to keep the card visually upright while the
+   parent .orbit-system rotates 0 -> 360deg. The translate(-50%,-50%) in the
+   keyframe centers the card around the slot's center (which is the orbit
+   point after the slot's own static transform). */
+.orbit-card-upright {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: orbit-counter 38s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes orbit-counter {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* Pause on hover (desktop only) — gives users a chance to read a card.
+   We don't pause on touch devices to avoid getting stuck. */
+@media (hover: hover) and (pointer: fine) {
+  .orbit-system:hover,
+  .orbit-system:hover .orbit-card-upright {
+    animation-play-state: paused;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-system {
+    animation: none;
+  }
+  .orbit-card-upright {
+    animation: none;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Responsive orbit radius — the cards must sit nicely on the circle at every
+ * viewport size. We use a CSS variable consumed by the hero's inline transform.
+ * -------------------------------------------------------------------------- */
+.orbit-slot {
+  --orbit-radius: 36%;
+}
+@media (min-width: 400px) {
+  .orbit-slot { --orbit-radius: 38%; }
+}
+@media (min-width: 640px) {
+  .orbit-slot { --orbit-radius: 40%; }
+}
+@media (min-width: 1024px) {
+  .orbit-slot { --orbit-radius: 42%; }
+}
+
+/* ============================================================================
+ * Marquee — for the brand-card strip in the gallery section
+ * ========================================================================== */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Subtle float animation (used on decorative chips) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Slow spin used on the orbit guide rings */
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-slow-spin {
+  animation: slow-spin 60s linear infinite;
+}
+
+@keyframes slow-spin-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+.animate-slow-spin-reverse {
+  animation: slow-spin-reverse 80s linear infinite;
+}
+
+/* ============================================================================
+ * Scroll-reveal helper — used with IntersectionObserver in components
+ * ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glass card surface used on dark sections */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
