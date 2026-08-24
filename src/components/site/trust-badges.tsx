@@ -17,34 +17,37 @@ const iconMap: Record<string, LucideIcon> = {
   layers: Layers,
 };
 
+/**
+ * TrustBadges: different layout from Jiro.
+ * Asymmetric staggered 4-card row with connecting line and large numeric labels.
+ */
 export function TrustBadges() {
   return (
-    <section id="why-us" className="py-20 md:py-28 bg-[#FAF6EE]">
+    <section className="py-16 md:py-24 bg-white border-y border-[#3b0764]/8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mb-12 md:mb-16"
+          className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#0C3B2E]/8 border border-[#0C3B2E]/15 px-4 py-1.5 mb-4">
-            <span className="text-xs font-semibold text-[#0C3B2E] uppercase tracking-wider">
-              Why Palmbox
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#3b0764]/5 border border-[#3b0764]/10 px-4 py-1.5 mb-4">
+            <span className="text-xs font-semibold text-[#3b0764] uppercase tracking-wider">
+              Why trade with us
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0C3B2E] tracking-tight">
-            Built for traders who value speed &amp; trust
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1f0a2e] tracking-tight">
+            Built on trust, speed, and fairness
           </h2>
-          <p className="mt-4 text-base md:text-lg text-[#1A1A1A]/70 leading-relaxed">
-            We&apos;ve designed every step around what matters most to you: a
-            fast, secure payout at the best rate, with real humans on the other
-            end of WhatsApp whenever you need them.
+          <p className="mt-4 text-base md:text-lg text-[#5a4068]">
+            Every trade is handled with the same care, whether it&apos;s your
+            first $25 card or your thousandth bulk order. Here&apos;s what
+            every client gets when they trade with GraceOfGod.
           </p>
         </motion.div>
 
-        {/* Trust cards - vertical layout with stat on top */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {trustBadges.map((badge, i) => {
             const Icon = iconMap[badge.icon] ?? ShieldCheck;
             return (
@@ -54,32 +57,25 @@ export function TrustBadges() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group relative bg-white rounded-2xl p-6 border border-[#E6DCC8] hover:border-[#C97B3C]/50 hover:shadow-xl hover:shadow-[#0C3B2E]/8 transition-all duration-300 overflow-hidden"
+                className="group relative bg-white rounded-3xl p-6 md:p-7 border border-[#3b0764]/10 hover:border-[#f59e0b]/50 hover:shadow-xl hover:shadow-[#3b0764]/10 transition-all duration-300"
               >
-                {/* Top accent line */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0C3B2E] via-[#C97B3C] to-[#0C3B2E] opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Number marker */}
+                <span className="absolute top-6 right-6 text-5xl font-extrabold text-[#3b0764]/5 group-hover:text-[#f59e0b]/15 transition-colors">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
 
-                {/* Big stat at top */}
-                <div className="flex items-end justify-between mb-4">
-                  <div>
-                    <div className="text-3xl md:text-4xl font-extrabold text-[#0C3B2E] leading-none">
-                      {badge.stat}
-                    </div>
-                    <div className="text-[10px] text-[#C97B3C] uppercase tracking-[0.18em] font-semibold mt-1">
-                      {badge.statLabel}
-                    </div>
-                  </div>
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#F1E9D9] text-[#0C3B2E] group-hover:bg-[#0C3B2E] group-hover:text-[#C97B3C] transition-colors">
-                    <Icon className="h-5 w-5" />
-                  </div>
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#3b0764] via-[#5b0e8a] to-[#1e0a2e] text-white shadow-lg shadow-[#3b0764]/25 group-hover:scale-110 transition-transform">
+                  <Icon className="h-7 w-7" />
                 </div>
-
-                <h3 className="text-base font-bold text-[#0C3B2E] mb-2">
+                <h3 className="text-lg font-bold text-[#1f0a2e] mb-2">
                   {badge.title}
                 </h3>
-                <p className="text-sm text-[#1A1A1A]/70 leading-relaxed">
+                <p className="text-sm text-[#5a4068] leading-relaxed">
                   {badge.description}
                 </p>
+
+                {/* Bottom accent bar */}
+                <div className="mt-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#fb7185] group-hover:w-full transition-all duration-300" />
               </motion.div>
             );
           })}

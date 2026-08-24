@@ -37,12 +37,6 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "jiro-reference",
-    "upload",
-    "tool-results",
-    "skills",
-    "mini-services",
-    "download"
+    "node_modules"
   ]
 }
