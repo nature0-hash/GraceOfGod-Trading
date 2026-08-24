@@ -1,34 +1,25 @@
 "use client";
 
 /**
- * Realistic gift-card SVG components for each brand.
- *
+ * Realistic gift card SVG components for each brand.
  * Each card mimics the actual brand's gift card design with:
  *  - Proper brand colors / gradients
  *  - Brand logo (SVG)
  *  - "GIFT CARD" header
  *  - Brand name
  *  - Chip element
- *  - "GraceOfGod Trading" footer (NEW, replaces "Jiro's Trading")
- *
- * Three variants:
- *  - "large": big card used in gallery grid (h-52)
- *  - "small": small card used in marquee (44x28)
- *  - "mini":  extra-small card used in the hero orbit animation (compact, ~w-28 h-18)
+ *  - "PALMBOX" footer
  */
 
 export type BrandCardProps = {
-  variant?: "large" | "small" | "mini";
+  variant?: "large" | "small";
   className?: string;
 };
-
-const FOOTER_TEXT = "GraceOfGod Trading";
 
 /* ============================================================================
  * Amazon Gift Card
  * ========================================================================== */
 export function AmazonCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#FF9900 0%,#FFB84D 100%)" logo={<AmazonLogo className="h-3" />} label="amazon" textDark />;
   if (variant === "small") {
     return (
       <div
@@ -61,7 +52,7 @@ export function AmazonCard({ variant = "large", className = "" }: BrandCardProps
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-70 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-70 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -81,7 +72,6 @@ function AmazonLogo({ className = "" }: { className?: string }) {
  * Steam Gift Card
  * ========================================================================== */
 export function SteamCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#1B2838 0%,#2A475E 100%)" logo={<SteamLogo className="h-3" />} label="STEAM" />;
   if (variant === "small") {
     return (
       <div
@@ -112,7 +102,7 @@ export function SteamCard({ variant = "large", className = "" }: BrandCardProps)
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-400/50 border border-white/30" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -134,7 +124,6 @@ function SteamLogo({ className = "" }: { className?: string }) {
  * iTunes / Apple Gift Card
  * ========================================================================== */
 export function ITunesCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#FB5BC5 0%,#FF8FB1 50%,#FFB347 100%)" logo={<AppleLogo className="h-3 text-white" />} label="iTunes" />;
   if (variant === "small") {
     return (
       <div
@@ -173,7 +162,7 @@ export function ITunesCard({ variant = "large", className = "" }: BrandCardProps
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-200/70 border border-white/40" />
-          <div className="text-[10px] opacity-80 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-80 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -192,7 +181,6 @@ function AppleLogo({ className = "", color = "currentColor" }: { className?: str
  * Google Play Gift Card
  * ========================================================================== */
 export function GooglePlayCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#ffffff 0%,#f1f5f9 100%)" logo={<GooglePlayLogo className="h-3" />} label="Google Play" textDark />;
   if (variant === "small") {
     return (
       <div
@@ -227,13 +215,13 @@ export function GooglePlayCard({ variant = "large", className = "" }: BrandCardP
             <div className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-semibold">Gift Card</div>
             <div className="mt-3 flex items-center gap-2">
               <GooglePlayLogo className="h-7" />
-              <span className="text-xl font-bold">Google Play</span>
+              <span className="text-xl font-bold text-slate-800">Google Play</span>
             </div>
           </div>
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-400/70 border border-slate-300" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold text-slate-600">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -243,10 +231,11 @@ export function GooglePlayCard({ variant = "large", className = "" }: BrandCardP
 function GooglePlayLogo({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className}>
-      <path d="M3.6 1.8C3.2 2.1 3 2.6 3 3.2v17.6c0 .6.2 1.1.6 1.4l9.8-9.2L3.6 1.8z" fill="#0066DA" />
-      <path d="M17.1 8.7L4.5 1.4l-.5-.2-.4.6 9.8 9.2 3.7-2.3z" fill="#00AC47" />
-      <path d="M17.1 15.3l-3.7-2.3-9.8 9.2.4.6.5-.2 12.6-7.3z" fill="#EA4335" />
-      <path d="M20.4 9.6l-3.3-1.9-3.7 3.4 3.7 3.4 3.3-1.9c1-.6 1-2.4 0-3z" fill="#FFBA00" />
+      <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#00A1FF" />
+      <path d="M14.524 12.732l-2.732-2.732 6.07-3.472a.998.998 0 0 1 1.076.054l-4.414 6.15z" fill="#00CF5F" />
+      <path d="M14.524 11.268l4.414 6.15a.998.998 0 0 1-1.076.054l-6.07-3.472 2.732-2.732z" fill="#FFB700" />
+      <path d="M3.609 1.814a.998.998 0 0 1 .594-.085l11.321 6.479-2.732 2.732L3.609 1.814z" fill="#FF3D4D" />
+      <path d="M3.609 22.186l9.183-10.186 2.732 2.732-11.321 6.479a.998.998 0 0 1-.594-.025z" fill="#00A1FF" />
     </svg>
   );
 }
@@ -255,15 +244,14 @@ function GooglePlayLogo({ className = "" }: { className?: string }) {
  * Xbox Gift Card
  * ========================================================================== */
 export function XboxCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#107C10 0%,#0E6E0E 100%)" logo={<XboxLogo className="h-3" />} label="Xbox" />;
   if (variant === "small") {
     return (
       <div
         className={`relative w-44 h-28 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-white/10 ${className}`}
-        style={{ background: "linear-gradient(135deg, #107C10 0%, #0E6E0E 100%)" }}
+        style={{ background: "linear-gradient(135deg, #107C10 0%, #0E6B0E 100%)" }}
       >
         <XboxLogo className="absolute top-2 left-2 h-5" />
-        <div className="absolute bottom-1.5 left-2 text-[9px] font-bold text-white">Xbox</div>
+        <div className="absolute bottom-1.5 left-2 text-[9px] font-bold text-white">XBOX</div>
         <div className="absolute bottom-1.5 right-2 h-3 w-4 rounded-sm bg-yellow-300/60 border border-white/30" />
       </div>
     );
@@ -271,24 +259,24 @@ export function XboxCard({ variant = "large", className = "" }: BrandCardProps) 
   return (
     <div
       className={`relative h-52 rounded-2xl overflow-hidden shadow-lg border border-white/10 ${className}`}
-      style={{ background: "linear-gradient(135deg, #107C10 0%, #0E6E0E 60%, #107C10 100%)" }}
+      style={{ background: "linear-gradient(135deg, #107C10 0%, #0E6B0E 60%, #107C10 100%)" }}
     >
       <div className="absolute inset-0 opacity-15">
         <svg viewBox="0 0 200 100" className="w-full h-full">
-          <circle cx="170" cy="20" r="30" fill="white" />
+          <circle cx="40" cy="50" r="40" fill="white" />
         </svg>
       </div>
       <div className="relative h-full p-5 flex flex-col justify-between text-white">
-        <div className="flex items-start justify-between">
-          <div>
-            <div className="text-[10px] uppercase tracking-[0.2em] opacity-70 font-semibold">Gift Card</div>
-            <div className="mt-3 text-2xl font-bold">Xbox</div>
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.2em] opacity-70 font-semibold">Gift Card</div>
+          <div className="mt-3 flex items-center gap-2">
+            <XboxLogo className="h-7" />
+            <span className="text-2xl font-bold tracking-tight">XBOX</span>
           </div>
-          <XboxLogo className="h-10" />
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-70 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-70 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -297,8 +285,8 @@ export function XboxCard({ variant = "large", className = "" }: BrandCardProps) 
 
 function XboxLogo({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="#FFFFFF">
-      <path d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.246-1.092-4.873-7.078-7.902-7.078-3.024 0-9.15 5.986-7.898 7.078M12 0C5.93 0 .93 4.93.84 11.074c.052-3.058 1.535-5.776 3.844-7.55 3.13-2.41 7.31-2.41 10.44 0 2.305 1.774 3.788 4.492 3.844 7.55C23.07 4.93 18.072 0 12 0M4.11 13.078c1.65-.547 5.79-1.953 7.89-1.953 2.1 0 6.24 1.406 7.89 1.953 1.86.621 3.86 1.738 3.86 3.875 0 0-3.55-7.945-7.86-9.742-1.43-.625-3.89-1.219-3.89-1.219s-2.46.594-3.89 1.219C3.86 9.93.32 17.953.32 17.953c0-2.137 2.0-3.254 3.79-3.875" />
+    <svg viewBox="0 0 24 24" className={className} fill="white">
+      <path d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.246-1.092-3.647-5.235-7.902-7.834-4.255 2.599-9.148 6.742-7.898 7.834zm11.16-19.55C17.962 2.535 20.235 4.59 21.633 7.21c.838 1.575-3.188 6.252-5.354 8.064-2.318-1.885-4.66-4.854-4.66-4.854s2.36-2.945 4.701-4.854c-2.328-1.91-5.184-3.456-7.18-3.456-.657 0-1.16.146-1.51.41C9.295.913 10.624 0 12 0c1.396 0 2.66.387 3.262 1.483z" />
     </svg>
   );
 }
@@ -307,14 +295,13 @@ function XboxLogo({ className = "" }: { className?: string }) {
  * PlayStation Gift Card
  * ========================================================================== */
 export function PlayStationCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#003791 0%,#0050C8 100%)" logo={<PlayStationLogo className="h-3" />} label="PSN" />;
   if (variant === "small") {
     return (
       <div
         className={`relative w-44 h-28 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-white/10 ${className}`}
-        style={{ background: "linear-gradient(135deg, #003791 0%, #0050C8 100%)" }}
+        style={{ background: "linear-gradient(135deg, #003791 0%, #0048C8 100%)" }}
       >
-        <PlayStationLogo className="absolute top-2 left-2 h-5" />
+        <PlayStationLogo className="absolute top-2 right-2 h-6 text-white" />
         <div className="absolute bottom-1.5 left-2 text-[9px] font-bold text-white">PlayStation</div>
         <div className="absolute bottom-1.5 right-2 h-3 w-4 rounded-sm bg-yellow-300/60 border border-white/30" />
       </div>
@@ -323,34 +310,34 @@ export function PlayStationCard({ variant = "large", className = "" }: BrandCard
   return (
     <div
       className={`relative h-52 rounded-2xl overflow-hidden shadow-lg border border-white/10 ${className}`}
-      style={{ background: "linear-gradient(135deg, #003791 0%, #0050C8 60%, #003791 100%)" }}
+      style={{ background: "linear-gradient(135deg, #003791 0%, #0048C8 60%, #0070D1 100%)" }}
     >
       <div className="absolute inset-0 opacity-15">
         <svg viewBox="0 0 200 100" className="w-full h-full">
-          <circle cx="40" cy="50" r="30" fill="white" />
+          <circle cx="160" cy="20" r="35" fill="white" />
         </svg>
       </div>
       <div className="relative h-full p-5 flex flex-col justify-between text-white">
         <div className="flex items-start justify-between">
           <div>
             <div className="text-[10px] uppercase tracking-[0.2em] opacity-70 font-semibold">Gift Card</div>
-            <div className="mt-3 text-2xl font-bold">PlayStation</div>
+            <div className="mt-3 text-xl font-bold">PlayStation</div>
           </div>
-          <PlayStationLogo className="h-10" />
+          <PlayStationLogo className="h-9 text-white" />
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-70 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-70 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
   );
 }
 
-function PlayStationLogo({ className = "" }: { className?: string }) {
+function PlayStationLogo({ className = "", color = "currentColor" }: { className?: string; color?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="#FFFFFF">
-      <path d="M9.5 1.5v21l3 .9v-7.5l4.5 1.5c1.5.6 2.4 1.8 2 3.3-.3 1.2-1.5 2-3 2.4l-.3.1v1.7l5.4-1.9c2.4-.9 3.6-2.7 3.3-5-.3-2.2-1.8-3.6-4.2-4.2l-7.7-2.5V5.5l4.5 1.5c1.5.5 2.4 1.6 2.1 3-.2 1-1 1.7-2.4 2.2v1.7c2.4-.4 4.2-1.7 4.8-3.7.7-2.4-.6-4.5-3.3-5.4L9.5 1.5z" />
+    <svg viewBox="0 0 24 24" className={className} fill={color}>
+      <path d="M9.483 3.16v15.184l3.632 1.14V8.395c0-.86.386-1.444 1.003-1.24.723.2.86 1.16.86 2.02v4.07c2.765 1.323 4.936.026 4.936-3.62 0-3.738-1.323-5.296-5.193-6.42-1.526-.452-4.07-1.04-7.238-1.04zM8.18 19.79c-1.418-.42-2.715-.55-3.59-.31-.452.13-.55.55-.13.704 1.487.522 4.468.355 6.94-.45v-1.27c-.97.41-2.06.74-3.22 1.326zm9.93-.295c-.83-.083-1.74.043-2.83.36v1.27c1.42-.41 2.85-.55 3.92-.36.5.083.45.61-.13.65-1.42.13-3.21.13-4.96-.27-.41.13-.83.27-1.27.36v-3.18c1.5-.55 3.27-.83 4.69-.55.55.083.83.45.83.83v.13c0 .41-.41.55-.83.5l-.42-.04z" />
     </svg>
   );
 }
@@ -359,37 +346,36 @@ function PlayStationLogo({ className = "" }: { className?: string }) {
  * eBay Gift Card
  * ========================================================================== */
 export function EbayCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#ffffff 0%,#f8fafc 100%)" logo={<EbayLogo className="h-3" />} label="ebay" textDark />;
   if (variant === "small") {
     return (
       <div
-        className={`relative w-44 h-28 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-slate-200 ${className}`}
-        style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}
+        className={`relative w-44 h-28 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-white/10 ${className}`}
+        style={{ background: "linear-gradient(135deg, #E53238 0%, #F5A623 100%)" }}
       >
         <EbayLogo className="absolute top-2 left-2 h-5" />
-        <div className="absolute bottom-1.5 left-2 text-[9px] font-bold text-slate-700">eBay</div>
-        <div className="absolute bottom-1.5 right-2 h-3 w-4 rounded-sm bg-yellow-400/60 border border-slate-300" />
+        <div className="absolute bottom-1.5 left-2 text-[9px] font-bold text-white">GIFT CARD</div>
+        <div className="absolute bottom-1.5 right-2 h-3 w-4 rounded-sm bg-yellow-300/60 border border-white/30" />
       </div>
     );
   }
   return (
     <div
-      className={`relative h-52 rounded-2xl overflow-hidden shadow-lg border border-slate-200 ${className}`}
-      style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #e2e8f0 100%)" }}
+      className={`relative h-52 rounded-2xl overflow-hidden shadow-lg border border-white/10 ${className}`}
+      style={{ background: "linear-gradient(135deg, #E53238 0%, #F5A623 60%, #0064D2 100%)" }}
     >
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         <svg viewBox="0 0 200 100" className="w-full h-full">
-          <circle cx="100" cy="50" r="40" fill="#E53238" opacity="0.05" />
+          <circle cx="20" cy="80" r="40" fill="white" />
         </svg>
       </div>
-      <div className="relative h-full p-5 flex flex-col justify-between text-slate-800">
+      <div className="relative h-full p-5 flex flex-col justify-between text-white">
         <div>
-          <div className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-semibold">Gift Card</div>
-          <EbayLogo className="mt-3 h-10" />
+          <div className="text-[10px] uppercase tracking-[0.2em] opacity-80 font-semibold">Gift Card</div>
+          <EbayLogo className="mt-3 h-8" />
         </div>
         <div className="flex items-center justify-between">
-          <div className="h-6 w-8 rounded-md bg-yellow-400/70 border border-slate-300" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
+          <div className="text-[10px] opacity-80 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -411,7 +397,6 @@ function EbayLogo({ className = "" }: { className?: string }) {
  * Sephora Gift Card
  * ========================================================================== */
 export function SephoraCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#000000 0%,#1a1a1a 100%)" logo={null} label="SEPHORA" />;
   if (variant === "small") {
     return (
       <div
@@ -433,7 +418,7 @@ export function SephoraCard({ variant = "large", className = "" }: BrandCardProp
         <svg viewBox="0 0 200 100" className="w-full h-full">
           <defs>
             <radialGradient id="sephora-glow" cx="50%" cy="50%">
-              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.3" />
+              <stop offset="0%" stopColor="#C97B3C" stopOpacity="0.3" />
               <stop offset="100%" stopColor="white" stopOpacity="0" />
             </radialGradient>
           </defs>
@@ -447,7 +432,7 @@ export function SephoraCard({ variant = "large", className = "" }: BrandCardProp
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -458,7 +443,6 @@ export function SephoraCard({ variant = "large", className = "" }: BrandCardProp
  * Netflix Gift Card
  * ========================================================================== */
 export function NetflixCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#000000 0%,#1a0000 100%)" logo={null} label="NETFLIX" />;
   if (variant === "small") {
     return (
       <div
@@ -488,7 +472,7 @@ export function NetflixCard({ variant = "large", className = "" }: BrandCardProp
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -507,7 +491,6 @@ function NetflixLogo({ className = "" }: { className?: string }) {
  * Spotify Gift Card
  * ========================================================================== */
 export function SpotifyCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#000000 0%,#1a1a1a 100%)" logo={<SpotifyLogo className="h-3" />} label="Spotify" />;
   if (variant === "small") {
     return (
       <div
@@ -541,7 +524,7 @@ export function SpotifyCard({ variant = "large", className = "" }: BrandCardProp
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -560,7 +543,6 @@ function SpotifyLogo({ className = "" }: { className?: string }) {
  * Visa Gift Card
  * ========================================================================== */
 export function VisaCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#1A1F71 0%,#2A2F8A 100%)" logo={<VisaLogo className="h-3" />} label="VISA" />;
   if (variant === "small") {
     return (
       <div
@@ -590,7 +572,7 @@ export function VisaCard({ variant = "large", className = "" }: BrandCardProps) 
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-70 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-70 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -609,7 +591,6 @@ function VisaLogo({ className = "" }: { className?: string }) {
  * Mastercard Gift Card
  * ========================================================================== */
 export function MastercardCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%)" logo={<MastercardLogo className="h-3" />} label="" />;
   if (variant === "small") {
     return (
       <div
@@ -640,7 +621,7 @@ export function MastercardCard({ variant = "large", className = "" }: BrandCardP
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-70 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-70 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -661,7 +642,6 @@ function MastercardLogo({ className = "" }: { className?: string }) {
  * Walmart Gift Card
  * ========================================================================== */
 export function WalmartCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#0071CE 0%,#005EB8 100%)" logo={<WalmartLogo className="h-3" />} label="Walmart" />;
   if (variant === "small") {
     return (
       <div
@@ -694,7 +674,7 @@ export function WalmartCard({ variant = "large", className = "" }: BrandCardProp
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-80 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-80 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -713,7 +693,6 @@ function WalmartLogo({ className = "" }: { className?: string }) {
  * Target Gift Card
  * ========================================================================== */
 export function TargetCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#CC0000 0%,#A60000 100%)" logo={<TargetLogo className="h-3" />} label="target" />;
   if (variant === "small") {
     return (
       <div
@@ -746,7 +725,7 @@ export function TargetCard({ variant = "large", className = "" }: BrandCardProps
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-80 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-80 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -768,7 +747,6 @@ function TargetLogo({ className = "" }: { className?: string }) {
  * Best Buy Gift Card
  * ========================================================================== */
 export function BestBuyCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#0046BE 0,#0033A0 100%)" logo={null} label="BEST BUY" />;
   if (variant === "small") {
     return (
       <div
@@ -798,7 +776,7 @@ export function BestBuyCard({ variant = "large", className = "" }: BrandCardProp
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-80 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-80 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -809,11 +787,10 @@ export function BestBuyCard({ variant = "large", className = "" }: BrandCardProp
  * Apple Store Gift Card
  * ========================================================================== */
 export function AppleStoreCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#F5F5F7 0%,#E8E8ED 100%)" logo={<AppleLogo className="h-3 text-[#1D1D1F]" />} label="App Store" textDark />;
   if (variant === "small") {
     return (
       <div
-        className={`relative w-44 h-28 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-slate-200 ${className}`}
+        className={`relative w-44 h-28 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-white/10 ${className}`}
         style={{ background: "linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%)" }}
       >
         <AppleLogo className="absolute top-2 right-2 h-5 text-[#1D1D1F]" />
@@ -848,7 +825,7 @@ export function AppleStoreCard({ variant = "large", className = "" }: BrandCardP
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-slate-300" />
-          <div className="text-[10px] opacity-60 font-semibold text-slate-600">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold text-slate-600">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -859,7 +836,6 @@ export function AppleStoreCard({ variant = "large", className = "" }: BrandCardP
  * Nike Gift Card
  * ========================================================================== */
 export function NikeCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#111111 0%,#2a2a2a 100%)" logo={<NikeLogo className="h-3" />} label="NIKE" />;
   if (variant === "small") {
     return (
       <div
@@ -890,7 +866,7 @@ export function NikeCard({ variant = "large", className = "" }: BrandCardProps) 
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -909,7 +885,6 @@ function NikeLogo({ className = "" }: { className?: string }) {
  * Adidas Gift Card
  * ========================================================================== */
 export function AdidasCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#000000 0%,#1a1a1a 100%)" logo={<AdidasLogo className="h-3" />} label="adidas" />;
   if (variant === "small") {
     return (
       <div
@@ -940,7 +915,7 @@ export function AdidasCard({ variant = "large", className = "" }: BrandCardProps
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -961,7 +936,6 @@ function AdidasLogo({ className = "" }: { className?: string }) {
  * Macy's Gift Card
  * ========================================================================== */
 export function MacysCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#E21A2C 0%,#B8151F 100%)" logo={null} label="Macy's" />;
   if (variant === "small") {
     return (
       <div
@@ -993,7 +967,7 @@ export function MacysCard({ variant = "large", className = "" }: BrandCardProps)
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-80 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-80 font-semibold">PALMBOX</div>
         </div>
       </div>
     </div>
@@ -1004,7 +978,6 @@ export function MacysCard({ variant = "large", className = "" }: BrandCardProps)
  * Nordstrom Gift Card
  * ========================================================================== */
 export function NordstromCard({ variant = "large", className = "" }: BrandCardProps) {
-  if (variant === "mini") return <MiniShell bg="linear-gradient(135deg,#000000 0%,#1a1a1a 100%)" logo={null} label="Nordstrom" />;
   if (variant === "small") {
     return (
       <div
@@ -1034,50 +1007,8 @@ export function NordstromCard({ variant = "large", className = "" }: BrandCardPr
         </div>
         <div className="flex items-center justify-between">
           <div className="h-6 w-8 rounded-md bg-yellow-300/70 border border-white/40" />
-          <div className="text-[10px] opacity-60 font-semibold">{FOOTER_TEXT}</div>
+          <div className="text-[10px] opacity-60 font-semibold">PALMBOX</div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-/* ============================================================================
- * MiniShell: shared compact card used by all brand cards in the hero orbit.
- * Keeps the visual identity consistent across all orbiting cards.
- * ========================================================================== */
-function MiniShell({
-  bg,
-  logo,
-  label,
-  textDark = false,
-}: {
-  bg: string;
-  logo: React.ReactNode;
-  label: string;
-  textDark?: boolean;
-}) {
-  const textCls = textDark ? "text-slate-900" : "text-white";
-  return (
-    <div
-      className="relative w-[88px] h-[58px] sm:w-[108px] sm:h-[68px] rounded-lg overflow-hidden shadow-xl border border-white/10"
-      style={{ background: bg }}
-    >
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <svg viewBox="0 0 100 60" className="w-full h-full" preserveAspectRatio="none">
-          <circle cx="85" cy="50" r="22" fill="white" opacity="0.18" />
-          <circle cx="15" cy="10" r="14" fill="white" opacity="0.12" />
-        </svg>
-      </div>
-      <div className={`relative h-full p-1.5 flex flex-col justify-between ${textCls}`}>
-        <div className="flex items-start justify-between">
-          {logo}
-          <div className="h-2 w-3 rounded-[2px] bg-yellow-300/60 border border-white/30 mt-0.5" />
-        </div>
-        {label && (
-          <div className="text-[7px] sm:text-[8px] font-bold tracking-wider leading-none truncate">
-            {label}
-          </div>
-        )}
       </div>
     </div>
   );

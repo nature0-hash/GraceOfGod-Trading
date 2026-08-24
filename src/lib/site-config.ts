@@ -1,10 +1,7 @@
 /**
- * Site-wide configuration for GRACEOFGOD TRADING AND LOGISTICS LIMITED.
- *
- * IMPORTANT: The WhatsApp number is intentionally ONLY referenced here as data.
- * It is rendered visibly on the page ONLY in the Footer's "Contact Us" block.
- * Everywhere else, WhatsApp actions use the button (which opens wa.me) WITHOUT
- * displaying the actual number.
+ * Site-wide configuration for PALMBOX TRADING LIMITED.
+ * The WhatsApp number is intentionally NOT exported as a display string here.
+ * The number is only shown in the footer; everywhere else we use a generic label.
  */
 
 export type BrandId =
@@ -32,31 +29,29 @@ export type BrandId =
 export type GiftCardBrand = {
   id: BrandId;
   name: string;
-  /** Optional short tagline used on gallery cards */
-  tag?: string;
 };
 
 export const siteConfig = {
-  brand: "GRACEOFGOD TRADING AND LOGISTICS LIMITED",
-  brandShort: "GraceOfGod Trading",
-  /** Tiny eyebrow used in navbar / hero */
-  brandEyebrow: "Sunrise Trading",
-  tagline: "Sunrise Gift Card Trading: Fast, Fair, Global",
+  brand: "PALMBOX TRADING LIMITED",
+  brandShort: "Palmbox Trading",
+  brandLine1: "PALMBOX",
+  brandLine2: "TRADING LIMITED",
+  tagline: "The Trusted Home of Gift Card Trading",
   description:
-    "GRACEOFGOD TRADING AND LOGISTICS LIMITED is a global gift card trading partner offering secure transactions, instant verification, and the best market rates for gift cards worldwide.",
+    "Palmbox Trading Limited is a global gift card trading partner. We deliver secure transactions, instant payouts, and the most competitive rates for gift cards worldwide.",
 
-  // Real company WhatsApp number (used by wa.me links; only DISPLAYED in footer).
-  whatsappNumber: "2348105369172",
-  whatsappDisplay: "+234 810 536 9172",
-
-  // Public email (shown in footer contact block).
-  email: "hello@sunrisetrading.com",
-  emailDisplay: "hello@sunrisetrading.com",
+  // Real company WhatsApp number. Only displayed visually in the footer.
+  whatsappNumber: "2349010808521",
+  whatsappDisplay: "+234 901 080 8521",
+  email: "support@palmboxtrading.com",
+  emailDisplay: "support@palmboxtrading.com",
+  domain: "palmboxtrading.com",
 
   // Working hours
-  hours: "Mon – Sat: 8:00 AM – 10:00 PM (WAT)",
-  hoursSun: "Sun: 12 PM – 10 PM (WAT)",
+  hours: "Mon - Sat: 8:00 AM - 11:00 PM (WAT)",
+  hoursSunday: "Sunday: 12:00 PM - 10:00 PM (WAT)",
 
+  // Social links (optional placeholders)
   social: {
     instagram: "#",
     facebook: "#",
@@ -64,10 +59,6 @@ export const siteConfig = {
   },
 } as const;
 
-/**
- * Build a WhatsApp deep-link. Number is hidden from the visible UI everywhere
- * except the footer, but the link itself still works correctly.
- */
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${siteConfig.whatsappNumber}`;
   if (!message) return base;
@@ -76,10 +67,11 @@ export function whatsappLink(message?: string) {
 
 export const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Brands", href: "#brands" },
-  { label: "How it Works", href: "#how-it-works" },
+  { label: "Why Us", href: "#why-us" },
+  { label: "Cards", href: "#cards" },
+  { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const trustBadges = [
@@ -87,81 +79,86 @@ export const trustBadges = [
     icon: "shield-check",
     title: "Bank-Grade Security",
     description:
-      "Every transaction is processed through verified, encrypted channels. We protect your cards and your payouts from start to finish.",
+      "Every trade is processed through encrypted, verified channels. Your cards and your payouts stay protected from start to finish.",
+    stat: "Always",
+    statLabel: "Secure",
   },
   {
     icon: "zap",
-    title: "Instant Verification",
+    title: "Lightning Payouts",
     description:
-      "Submit your card and our team verifies the balance within minutes. No long waits, no endless back-and-forth. Just fast confirmation.",
+      "Most trades are verified and paid out in under ten minutes. No long waiting, no excuses, no hidden delays.",
+    stat: "<10 min",
+    statLabel: "Avg payout",
   },
   {
     icon: "globe",
-    title: "Global Coverage",
+    title: "Traded Worldwide",
     description:
-      "We trade with clients across Africa, Europe, North America, Asia and beyond. Wherever you are, we have a payout method that works.",
+      "We work with traders across Africa, Europe, North America, Asia and beyond. Wherever you are, we have a payout option for you.",
+    stat: "40+",
+    statLabel: "Countries",
   },
   {
     icon: "layers",
-    title: "All Card Types",
+    title: "Every Card Accepted",
     description:
-      "Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, Sephora, Visa, Mastercard and many more. We accept them all, every single day.",
+      "Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, Sephora, Visa and many more. We trade every major brand.",
+    stat: "20+",
+    statLabel: "Card brands",
   },
 ] as const;
 
 export const giftCards: GiftCardBrand[] = [
-  { id: "amazon", name: "Amazon", tag: "USD · GBP · EUR · CAD" },
-  { id: "steam", name: "Steam", tag: "Wallet top-ups" },
-  { id: "itunes", name: "iTunes", tag: "Apple gift" },
-  { id: "google-play", name: "Google Play", tag: "All regions" },
-  { id: "xbox", name: "Xbox", tag: "Game pass" },
-  { id: "playstation", name: "PlayStation", tag: "PSN wallet" },
-  { id: "ebay", name: "eBay", tag: "Marketplace" },
-  { id: "sephora", name: "Sephora", tag: "Beauty" },
-  { id: "netflix", name: "Netflix", tag: "Streaming" },
-  { id: "spotify", name: "Spotify", tag: "Premium" },
-  { id: "visa", name: "Visa", tag: "Prepaid" },
-  { id: "mastercard", name: "Mastercard", tag: "Prepaid" },
-  { id: "walmart", name: "Walmart", tag: "Retail" },
-  { id: "target", name: "Target", tag: "Retail" },
-  { id: "best-buy", name: "Best Buy", tag: "Electronics" },
-  { id: "apple-store", name: "Apple Store", tag: "App Store & iTunes" },
-  { id: "nike", name: "Nike", tag: "Apparel" },
-  { id: "adidas", name: "Adidas", tag: "Apparel" },
-  { id: "macys", name: "Macy's", tag: "Department store" },
-  { id: "nordstrom", name: "Nordstrom", tag: "Luxury retail" },
+  { id: "amazon", name: "Amazon" },
+  { id: "steam", name: "Steam" },
+  { id: "itunes", name: "iTunes" },
+  { id: "google-play", name: "Google Play" },
+  { id: "xbox", name: "Xbox" },
+  { id: "playstation", name: "PlayStation" },
+  { id: "ebay", name: "eBay" },
+  { id: "sephora", name: "Sephora" },
+  { id: "netflix", name: "Netflix" },
+  { id: "spotify", name: "Spotify" },
+  { id: "visa", name: "Visa" },
+  { id: "mastercard", name: "Mastercard" },
+  { id: "walmart", name: "Walmart" },
+  { id: "target", name: "Target" },
+  { id: "best-buy", name: "Best Buy" },
+  { id: "apple-store", name: "Apple Store" },
+  { id: "nike", name: "Nike" },
+  { id: "adidas", name: "Adidas" },
+  { id: "macys", name: "Macy's" },
+  { id: "nordstrom", name: "Nordstrom" },
 ];
 
-export const stats = [
-  { value: "50K+", label: "Trades completed" },
-  { value: "120+", label: "Card types supported" },
-  { value: "40+", label: "Countries served" },
-  { value: "24/7", label: "WhatsApp support" },
-] as const;
+/**
+ * Live rate ticker data, used in the scrolling marquee strip below the hero.
+ * Rates are illustrative and clearly framed as "indicative" in the UI.
+ */
+export const liveRates: { brand: string; rate: string }[] = [
+  { brand: "Amazon", rate: "96%" },
+  { brand: "Steam", rate: "92%" },
+  { brand: "iTunes", rate: "90%" },
+  { brand: "Google Play", rate: "89%" },
+  { brand: "PlayStation", rate: "88%" },
+  { brand: "Xbox", rate: "87%" },
+  { brand: "Sephora", rate: "85%" },
+  { brand: "Netflix", rate: "84%" },
+  { brand: "Spotify", rate: "83%" },
+  { brand: "Visa", rate: "82%" },
+  { brand: "Mastercard", rate: "82%" },
+  { brand: "Walmart", rate: "80%" },
+  { brand: "eBay", rate: "79%" },
+  { brand: "Apple Store", rate: "88%" },
+  { brand: "Best Buy", rate: "78%" },
+  { brand: "Target", rate: "77%" },
+];
 
-export const faqs = [
-  {
-    q: "How long does it take to get paid after I submit my gift card?",
-    a: "Most trades are completed within 5 to 15 minutes of submitting your card. Once we verify the balance, we immediately arrange your payout through your preferred method: bank transfer, mobile money, or another local payment option. Complex or high-value trades may take slightly longer, but you will always know the status in real time through WhatsApp.",
-  },
-  {
-    q: "Which gift card brands do you accept?",
-    a: "We trade every major gift card brand including Amazon, Steam, iTunes, Google Play, Xbox, PlayStation, eBay, Sephora, Netflix, Spotify, Visa, Mastercard, Walmart, Target, Best Buy, Apple Store, Nike, Adidas, Macy's, Nordstrom and many more. If you don't see your card listed, message us on WhatsApp. We likely still trade it.",
-  },
-  {
-    q: "How do you determine the rate for my gift card?",
-    a: "Our rates are benchmarked daily against live market data so you always receive a fair, competitive payout. The exact rate depends on the card brand, the card value, the country of origin, and current market demand. Once we confirm your card details on WhatsApp, we send you an upfront quote with no hidden deductions and no last-minute changes.",
-  },
-  {
-    q: "What payment methods do you support for payouts?",
-    a: "We pay out via bank transfer, mobile money (including M-Pesa, GTBank, Access Bank, OPay and more), local payment apps, and select stablecoin options for international clients. Tell us your country and preferred method on WhatsApp, and we'll confirm the best payout channel for you.",
-  },
-  {
-    q: "Is it safe to trade gift cards with you?",
-    a: "Yes. Every card is verified through secure, authorized channels and every payout is recorded. We have completed thousands of trades with clients across more than 40 countries, and our reputation is built on paying exactly what we quote. We never ask for sensitive financial information beyond what's required to process your payout.",
-  },
-  {
-    q: "Can I trade gift cards in bulk?",
-    a: "Absolutely. We work with individual traders, retailers, and bulk resellers. Bulk trades often unlock better rates and faster processing. Message us on WhatsApp with your card types and total value, and our team will prepare a custom bulk-rate quote for you.",
-  },
+export const legalSections = [
+  { id: "terms", href: "#terms", label: "Terms & Conditions" },
+  { id: "privacy", href: "#privacy", label: "Privacy Policy" },
+  { id: "cookies", href: "#cookies", label: "Cookie Policy" },
+  { id: "aml", href: "#aml", label: "AML & Fraud Prevention" },
+  { id: "disclaimer", href: "#disclaimer", label: "Disclaimer" },
 ] as const;
